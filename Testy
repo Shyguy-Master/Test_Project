@@ -1,0 +1,278 @@
+/**
+ * @(#)AI.java
+ *
+ * AI application
+ *
+ * @author 
+ * @version 1.00 2017/1/5
+ */
+ import java.lang.Thread;
+ import java.util.Date;
+ import java.util.Scanner;
+ import java.lang.Math;
+public class AI {
+    
+    public static void CoinFlip() {
+    	String playerSide;
+    	int side;
+    	Scanner input = new Scanner(System.in);
+    	
+    	System.out.println("Call it:  ");
+    	playerSide = input.nextLine();
+    	
+    	side = (int)(2 * Math.random() + 1);
+    	String coinSide = String.valueOf(side);
+    	
+    	if (playerSide.equalsIgnoreCase(coinSide)) {
+    		System.out.println("Congrats, You Win!");
+    	}else {
+    		System.out.println("I win! XD");
+    	}
+    	
+    }
+    
+    public static void RPS() {
+    	
+    	int playerChoice, cpuChoice;
+    	Scanner input = new Scanner(System.in);
+    	
+    	System.out.print("Choose (1 = rock, 2 = paper, 3 = scissors):  ");
+    	playerChoice = input.nextInt();
+    	
+    	if (playerChoice == 1) {
+    		System.out.println("You: Rock");
+    	}else if (playerChoice == 2) {
+    		System.out.println("You: Paper");
+    	}else if (playerChoice == 3) {
+    		System.out.println("You: Scissors");
+    	}
+    	
+    	cpuChoice = (int)(3 * Math.random() + 1);
+    	if (cpuChoice == 1) {
+    		System.out.println("Me: Rock");
+    		System.out.println(" ____   ");
+    		System.out.println("/  _ \\_ ");
+    		System.out.println("| /    \\");
+    		System.out.println("\\_\\____/");
+    	}else if (cpuChoice == 2) {
+    		System.out.println("Me: Paper");
+    		System.out.println(" ______ ");
+    		System.out.println("|o_____|");
+    		System.out.println("|______|");
+    		System.out.println("|o_____|");
+    		System.out.println("|______|");
+    		System.out.println("|o_____|");
+    	}else if (cpuChoice == 3) {
+    		System.out.println("Me: Scissors");
+    		System.out.println(" __      __ ");
+    		System.out.println("|  |    |  |");
+    		System.out.println("|__|\\  /|__|");
+    		System.out.println("   \\ \\/ /   ");
+    		System.out.println("    \\ \\/    ");
+    		System.out.println("    /\\ \\    ");
+    		System.out.println("   / /\\ \\   ");
+    		System.out.println("  / /  \\ \\  ");
+    		System.out.println("  \\/    \\/  ");
+    	}
+    	
+    	if (playerChoice == cpuChoice) {
+    		System.out.println("It was a Tie ");
+    		System.out.println("Good Game ");
+    	}else if (playerChoice == (cpuChoice - 1) || (playerChoice == 3 && cpuChoice == 1)) {
+    		System.out.println("He He, I won ");
+    	}else if (playerChoice == (cpuChoice + 1) || (playerChoice == 1 && cpuChoice == 3)) {
+    		System.out.println("Dang it! You won ");
+    		System.out.println("Good Game ");
+    	}
+    	
+    }
+    
+    public static void Hello(String greeting) {
+    	
+    	if (greeting.indexOf("I am") != -1) {
+    		String name = greeting.substring(greeting.indexOf("I am") + 5);
+    		System.out.println("Hello " + name + ", I am Central Processing Unit, or CPU for short.  ");
+    	}else if (greeting.indexOf("I'm") != -1) {
+    		String name = greeting.substring(greeting.indexOf("I'm") + 4);
+    		System.out.println("Hello " + name + ", I am Central Processing Unit, or CPU for short.  ");
+    	}
+    }
+    
+    public static void main(String[] args) {
+    	
+    	int option;
+    	String text;
+    	Scanner input = new Scanner(System.in);
+    	
+    	for (int i = 0; i < 1; i++) {
+    		
+    		System.out.print("S");
+	
+			try {
+				
+				Thread.sleep(100);
+	
+				System.out.print("t");
+				
+				try {
+					
+					Thread.sleep(100);
+		
+					System.out.print("a");
+					
+					try {
+						
+						Thread.sleep(100);
+			
+						System.out.print("t");
+						
+						try {
+							
+							Thread.sleep(100);
+				
+							System.out.print("u");
+							
+							try {
+								
+								Thread.sleep(100);
+								
+								System.out.print("s");
+								
+								try {
+									
+									Thread.sleep(100);
+									
+									System.out.print(":");
+									
+									try {
+										
+										Thread.sleep(100);
+										
+										System.out.print(" ");
+										
+										try {
+											
+											Thread.sleep(1000);
+											
+											System.out.print("O");
+											
+											try {
+												
+												Thread.sleep(100);
+												
+												System.out.print("n");
+												
+												try {
+													
+													Thread.sleep(100);
+													
+													System.out.print(" ");
+													
+													try {
+														
+														Thread.sleep(100);
+														
+														System.out.print(" ");
+														
+														try {
+															
+															Thread.sleep(100);
+															
+															System.out.print(" ");
+															
+															try {
+																
+																Thread.sleep(100);
+																
+																System.out.print(" ");
+																
+																try {
+																	
+																	Thread.sleep(100);
+																	
+																	System.out.print(" ");
+																	
+																	try {
+																		
+																		Thread.sleep(100);
+																		
+																		System.out.println(" ");
+																		text = input.nextLine();
+																		
+																		Hello(text);
+																		
+																		System.out.println("What would you like to play?");
+																		System.out.println("1 = Rock Paper Scissors");
+																		System.out.println("2 = Coin Flip");
+																		System.out.println("3 = No Game");
+																		option = input.nextInt();
+																		
+																		switch (option) {
+																			case 1: RPS(); break;
+																			case 2: CoinFlip(); break;
+																			case 3: System.out.println("Okay! \nBye!"); break;
+																		}
+																		
+																	} catch (InterruptedException e) {
+																		e.printStackTrace();
+																	}
+																	
+																} catch (InterruptedException e) {
+																	e.printStackTrace();
+																}
+																
+															} catch (InterruptedException e) {
+																e.printStackTrace();
+															}
+															
+														} catch (InterruptedException e) {
+															e.printStackTrace();
+														}
+														
+													} catch (InterruptedException e) {
+														e.printStackTrace();
+													}
+													
+												} catch (InterruptedException e) {
+													e.printStackTrace();
+												}
+												
+											} catch (InterruptedException e) {
+												e.printStackTrace();
+											}
+											
+										} catch (InterruptedException e) {
+											e.printStackTrace();
+										}
+										
+									} catch (InterruptedException e) {
+										e.printStackTrace();
+									}
+									
+								} catch (InterruptedException e) {
+									e.printStackTrace();
+								}
+								
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+						
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+    	
+    }
+}
